@@ -10,7 +10,7 @@
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">LAZHOPEE</h2>
+                <h2 class="logo">shop</h2>
                 
 <!-- Bootstrap JS and Popper.js (required for Bootstrap modals) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

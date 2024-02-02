@@ -1,0 +1,48 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#productForm {
+    text-align: center;
+}
+
+#addProduct {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#addProduct:hover {
+    background-color: #45a049;
+}

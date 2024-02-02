@@ -48,6 +48,7 @@ $result = $conn->query($sql);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         background-color: #343a40; /* Updated background color */
         color: #000; /* Updated color for text content */
+        
     }
 
     th, td {

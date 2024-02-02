@@ -1,88 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>LAZHOPEE</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<?php include 'includes/session.php'; ?>
+<?php include 'includes/header.php'; ?>
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
 
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">shop</h2>
-                
-<!-- Bootstrap JS and Popper.js (required for Bootstrap modals) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include 'includes/navbar.php'; ?>
+     
+      <div class="content-wrapper">
+        <div class="container">
+
+          <!-- Main content -->
+          <section class="content">
+            <div class="row">
+                <div class="col-sm-9">
+                    <?php
+                        if(isset($_SESSION['error'])){
+                            echo "
+                                <div class='alert alert-danger'>
+                                    ".$_SESSION['error']."
+                                </div>
+                            ";
+                            unset($_SESSION['error']);
+                        }
+                    ?>
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <img src="images/banner1.png" alt="First slide">
+                          </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                          <span class="fa fa-angle-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                          <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                    
+                <div class="col-sm-3">
+                    <?php include 'includes/sidebar.php'; ?>
+                </div>
             </div>
-
-            
-        </div> 
-        <div class="content">
-        <div class="slideshow-container">
-  <div class="mySlides fade">
-    <img src="photos/aa.png" style="width:120%">
-  </div>
-
-  <div class="mySlides fade">
-    <img src="photos/yy.png" style="width:120%">
-  </div>
-
-  <div class="mySlides fade">
-    <img src="photos/zz.png" style="width:120%">
-  </div>
+          </section>
+         
+        </div>
+      </div>
+  
 </div>
 
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    let i;
-    const slides = document.getElementsByClassName("mySlides");
-    
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change slide every 2 seconds
-  }
-</script>
-
-            <form class="login-form" action="config/login.php" method="post">
-        <div class="form">
-        <?php
-    // Check if the alert session variable is set
-    if(isset($_SESSION["alert"])) {
-        echo '<div class="alert alert-danger" role="alert">' . $_SESSION["alert"] . '</div>';
-        // Unset the alert session variable
-        unset($_SESSION["alert"]);
-    }
-    ?>
-                    <h2>LAZHOPEE</h2>
-                    <input type="text" id="username" name="userName"  placeholder ="Email"required>
-                    <input type="password" id="password" name="Password"placeholder="Password" required>
-                    <button class="btnn" type ="submit" name="login">Login</button>
-                </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<?php include 'includes/scripts.php'; ?>
 </body>
 </html>
-
-<?php
-session_start();
-if(isset($_SESSION["userName"])) {
-    header("Location: homepage.php");
-    exit();
-}
-?>

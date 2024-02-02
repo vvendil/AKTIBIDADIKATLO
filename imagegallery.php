@@ -25,6 +25,7 @@ $result = $conn->query($sql);
   <div class="container-fluid">
  
     
+  
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
